@@ -1,0 +1,14 @@
+﻿cwd=C:\Users\atsha\OneDrive\Documents\Desktop\KAP_SYSTEM
+docker_client=29.6.1
+docker_server=29.6.1
+docker_desktop=4.81.0
+buildx=v0.35.0-desktop.2
+ostype=linux
+architecture=x86_64
+context=desktop-linux
+amd64_probe=x86_64
+arm64_probe=aarch64
+zstd_tag=v1.5.7
+zstd_sha=ac66b19e6bd6b83238bf008eecc1298105298532
+lz4_tag=v1.10.0
+lz4_sha=ebb370ca83af193212df4dcbadcc5d87bc0de2f0

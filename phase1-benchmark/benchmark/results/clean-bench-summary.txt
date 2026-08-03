@@ -1,0 +1,5 @@
+﻿run=1 exit=0 elapsed=8.191386 correctness=PASS output=99c06a7bc00410c4a6a75a3f7d88ca02b229b18d099dccb285d37c4aa2427a4f
+run=2 exit=0 elapsed=8.009837 correctness=PASS output=99c06a7bc00410c4a6a75a3f7d88ca02b229b18d099dccb285d37c4aa2427a4f
+run=3 exit=0 elapsed=8.222462 correctness=PASS output=99c06a7bc00410c4a6a75a3f7d88ca02b229b18d099dccb285d37c4aa2427a4f
+run=4 exit=0 elapsed=7.840853 correctness=PASS output=99c06a7bc00410c4a6a75a3f7d88ca02b229b18d099dccb285d37c4aa2427a4f
+run=5 exit=0 elapsed=8.376938 correctness=PASS output=99c06a7bc00410c4a6a75a3f7d88ca02b229b18d099dccb285d37c4aa2427a4f

@@ -1,0 +1,24 @@
+# Source pin for Phase 1 selected benchmark
+application=zstd
+category=data-compression
+upstream_url=https://github.com/facebook/zstd
+release_tag=v1.5.7
+commit_sha=f8745da6ff1ad1e7bab384bd1f9d742439278e99
+tag_object_sha=ac66b19e6bd6b83238bf008eecc1298105298532
+license=BSD-OR-GPLv2
+license_notes=Dual license: BSD or GPLv2. Not permissive-only. Preserve LICENSE and COPYING.
+fetch_method=git-clone-branch-tag
+fetch_commands=<<EOF
+git clone --branch v1.5.7 --depth 1 https://github.com/facebook/zstd.git source
+cd source
+git rev-parse HEAD   # must equal f8745da6ff1ad1e7bab384bd1f9d742439278e99
+EOF
+tarball_url=https://github.com/facebook/zstd/archive/refs/tags/v1.5.7.tar.gz
+input_generator=tests/datagen -g33554432
+input_size_bytes=33554432
+input_sha256=35cafdf130f1db75dbfec226ca9a1e100d38c3e26d8c8651808715de10450235
+benchmark_level=6
+benchmark_threads=1
+benchmark_iterations=10
+expected_runtime_seconds_amd64=~10
+notes=Annotated tag v1.5.7 peels to commit f8745da6...; pin the peeled commit.
