@@ -32,9 +32,9 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
 - [x] **A3** Python scaffold — [issue #10](https://github.com/atshalahmedkhan/KAP_System/issues/10) · [PR #11](https://github.com/atshalahmedkhan/KAP_System/pull/11) — `model:simple` — ✅ complete (2026-08-05)
 - [ ] **A4** x86 baseline recorded (state 1) — [issue #12](https://github.com/atshalahmedkhan/KAP_System/issues/12) · [PR #13](https://github.com/atshalahmedkhan/KAP_System/pull/13) (draft) — `model:simple` — blocked by A1
 
-### Phase B — The three components: not started
-- [ ] **B1** Profiling Engine — [issue #14](https://github.com/atshalahmedkhan/KAP_System/issues/14) · [PR #15](https://github.com/atshalahmedkhan/KAP_System/pull/15) (draft) — `model:complex` — blocked by A3, wayfinder #4
-- [ ] **B2** Optimization Agent — [issue #16](https://github.com/atshalahmedkhan/KAP_System/issues/16) · [PR #17](https://github.com/atshalahmedkhan/KAP_System/pull/17) (draft) — `model:complex` — blocked by A3, wayfinder #5
+### Phase B — The three components: in progress
+- [x] **B1** Profiling Engine — [issue #14](https://github.com/atshalahmedkhan/KAP_System/issues/14) · [PR #15](https://github.com/atshalahmedkhan/KAP_System/pull/15) — `model:complex` — ✅ complete (2026-08-05); native Arm profiling remains Phase C
+- [ ] **B2** Optimization Agent — [issue #16](https://github.com/atshalahmedkhan/KAP_System/issues/16) · [PR #17](https://github.com/atshalahmedkhan/KAP_System/pull/17) (draft) — `model:complex` — blocked by B1, wayfinder #5
 - [ ] **B3** Verification & Safety Engine — [issue #18](https://github.com/atshalahmedkhan/KAP_System/issues/18) · [PR #19](https://github.com/atshalahmedkhan/KAP_System/pull/19) (draft) — `model:complex` — blocked by A3, wayfinder #6
 - [ ] **B4** `archshift run` entrypoint wiring B1→B2→B3 — [issue #20](https://github.com/atshalahmedkhan/KAP_System/issues/20) · [PR #21](https://github.com/atshalahmedkhan/KAP_System/pull/21) (draft) — `model:simple` — blocked by B1, B2, B3
 
