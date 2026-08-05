@@ -1,0 +1,2 @@
+*.sh text eol=lf
+benchmark/llamacpp/expected/*.sha256 text eol=lf
