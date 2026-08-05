@@ -1,5 +1,20 @@
 # KAP System — Phase 1 Benchmark Selection
 
+## ArchShift Python package
+
+ArchShift requires Python 3.11 or newer. Install the package in editable mode:
+
+```bash
+python -m pip install -e .
+```
+
+Install the test dependency and run the test suite:
+
+```bash
+python -m pip install -e ".[test]"
+python -m pytest
+```
+
 ## Status
 
 **Phase 1 is complete.**

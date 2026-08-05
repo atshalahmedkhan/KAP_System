@@ -49,6 +49,9 @@ Read in this order before doing any non-trivial work:
 - **The benchmark app is llama.cpp**, not zstd. The old `phase1-benchmark/`
   (zstd) was removed in the 2026-08-05 replan; it lives in git history at
   commit `a44631a` if its harness scripts are wanted.
+- **Picking up a task issue?** Read [docs/agent-routing.md](docs/agent-routing.md)
+  first — model tier routing (Codex 5.6 Luna for `model:simple`, Codex 5.6
+  Tera for `model:complex`), claim/pickup procedure, what not to touch.
 
 ## Skills to reach for
 
