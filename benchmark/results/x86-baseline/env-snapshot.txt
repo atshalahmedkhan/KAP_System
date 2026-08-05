@@ -1,4 +1,6 @@
 state=x86-baseline
+acceptance_status=PROVISIONAL
+execution_host=local Windows Docker Desktop; designated shared x86 SSH host unavailable
 benchmark_completed_utc=2026-08-05T07:20:07Z
 host_cpu_model=13th Gen Intel(R) Core(TM) i7-13620H
 host_physical_cores=10
