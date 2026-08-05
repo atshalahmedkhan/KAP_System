@@ -18,6 +18,9 @@ dependencies = [
 [project.optional-dependencies]
 test = ["pytest>=8.4,<9"]
 
+[project.scripts]
+archshift = "archshift.cli:main"
+
 [tool.setuptools.packages.find]
 include = ["archshift*"]
 
