@@ -1,0 +1,27 @@
+{
+  "status": "degraded",
+  "errors": [
+    "event cycles unsupported or blocked",
+    "event instructions unsupported or blocked",
+    "event cache-references unsupported or blocked",
+    "event cache-misses unsupported or blocked",
+    "event branch-misses unsupported or blocked",
+    "event stalled-cycles-frontend unsupported or blocked",
+    "event stalled-cycles-backend unsupported or blocked"
+  ],
+  "metadata": {
+    "build_flags": ["-O2"],
+    "cpu_model": "Intel(R) Core(TM) i7-13620H",
+    "cpu_features": ["sse", "avx2"],
+    "thread_count": 16,
+    "perf_command": "docker exec llama perf stat -x, -e cycles,instructions ...",
+    "timestamp": "2026-08-05T07:00:00+00:00"
+  },
+  "summary": {
+    "ipc": null,
+    "cache_miss_rate": null,
+    "branch_miss_rate": null,
+    "wall_time_s": null
+  },
+  "hotspots": null
+}
