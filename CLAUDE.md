@@ -14,35 +14,41 @@ Optimization Challenge** hackathon (Cloud AI track).
 
 Read in this order before doing any non-trivial work:
 
-1. [docs/project-spec.md](docs/project-spec.md) — full spec: problem,
-   scope, architecture, phases, safety rules, MVP definition
-2. [docs/status.md](docs/status.md) — what's actually built vs. still spec
-3. [docs/architecture.md](docs/architecture.md) — condensed component diagram
-4. [docs/hackathon.md](docs/hackathon.md) — submission requirements, judging
-   criteria, deadlines
+1. [docs/revised-plan.md](docs/revised-plan.md) — **the operative plan.**
+   Nine-day scope, schedule, the three components being built, correctness
+   definition, risks. Supersedes project-spec.md §9/§16.
+2. [docs/status.md](docs/status.md) — what's actually built vs. still planned
+3. [docs/hackathon.md](docs/hackathon.md) — verified deadline, eligibility,
+   judging criteria
+4. [docs/project-spec.md](docs/project-spec.md) — long-term product spec.
+   Still the reference for architecture, safety rules, and MVP definition;
+   **its 21-phase plan and build order are superseded.**
+5. [docs/architecture.md](docs/architecture.md) — component diagram
 
 ## Ground rules for agents working here
 
-- **Follow the build order in project-spec.md §16.** Don't jump ahead —
-  e.g. no migration-agent code before a manual migration is documented
-  (Phase 4 must precede Phase 6).
+- **The deadline is 2026-08-14 16:00 PT.** Scope is
+  [revised-plan.md](docs/revised-plan.md) §3 — three components built deep
+  (Profiling Engine, Optimization Agent, Verification & Safety Engine),
+  everything else specced into `docs/deferred/`. Do not start building a
+  deferred component without an explicit decision to change scope.
 - **Never accept an unverified change.** Every patch must run on a temp
   branch, pass tests, and clear the benchmark noise threshold before it's
   treated as done. See project-spec.md §12 (safety rules) and §13 (scoring).
 - **Preserve three states in any benchmark work:** original x86, migrated
   unoptimized Arm64, optimized Arm64. Don't overwrite or conflate results
   across these.
-- **Keep docs/status.md current.** When you complete a phase or checklist
-  item, update it in the same change — don't let the doc drift from the code.
-- **Scope discipline.** One app, one repo, one container, one Arm target,
-  one optimization attempt at a time (project-spec.md §5, §15). Resist
-  scope creep even when it looks like an easy win.
-- **Don't touch the phase1-benchmark artifacts casually.** `phase1-benchmark/`
-  is a pinned, verified deliverable (zstd v1.5.7 @
-  `f8745da6ff1ad1e7bab384bd1f9d742439278e99`, fixed input, expected output
-  hashes). Changing it invalidates prior verification — if it must change,
-  re-run and re-document verification per
-  [phase1-benchmark/docs/phase1-verification.md](phase1-benchmark/docs/phase1-verification.md).
+- **Respect the tiered correctness definition** in revised-plan.md §4.
+  Arm-to-Arm comparisons require an exact output-hash match; x86-to-Arm
+  comparisons do not, because cross-architecture float divergence is expected.
+  Don't write a checker that demands bit-exactness across architectures.
+- **Rejections are deliverables.** A logged, explained rollback is headline
+  evidence — never suppress or discard one to make a run look clean.
+- **Keep docs/status.md current.** When you complete a task, tick it in the
+  same change — don't let the doc drift from the code.
+- **The benchmark app is llama.cpp**, not zstd. The old `phase1-benchmark/`
+  (zstd) was removed in the 2026-08-05 replan; it lives in git history at
+  commit `a44631a` if its harness scripts are wanted.
 
 ## Skills to reach for
 
