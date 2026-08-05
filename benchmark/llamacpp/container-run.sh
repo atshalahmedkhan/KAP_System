@@ -74,6 +74,14 @@ for iteration in $(seq 1 "${MEASURED_ITERATIONS}"); do
     elapsed_ns+=("$((end_ns - start_ns))")
 done
 
+for index in "${!elapsed_ns[@]}"; do
+    awk -v iteration="$((index + 1))" -v nanoseconds="${elapsed_ns[index]}" \
+        'BEGIN {
+            printf "measured_iteration=%d elapsed_ns=%.0f elapsed_seconds=%.9f\n",
+                iteration, nanoseconds, nanoseconds / 1000000000
+        }'
+done
+
 printf '%s\n' "${elapsed_ns[@]}" | awk '
     { values[NR] = $1 / 1000000000; sum += values[NR] }
     END {

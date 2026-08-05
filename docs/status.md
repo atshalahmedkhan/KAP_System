@@ -30,7 +30,8 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
       — *A* — **highest-risk unknown, day-1 priority**. No stub PR — this is
       recon, not code; the answer goes on the ticket itself.
 - [ ] **A3** Python scaffold — [issue #10](https://github.com/atshalahmedkhan/KAP_System/issues/10) · [PR #11](https://github.com/atshalahmedkhan/KAP_System/pull/11) (draft) — `model:simple` — **unblocked, takeable now**
-- [ ] **A4** x86 baseline recorded (state 1) — [issue #12](https://github.com/atshalahmedkhan/KAP_System/issues/12) · [PR #13](https://github.com/atshalahmedkhan/KAP_System/pull/13) (draft) — `model:simple` — blocked by A1
+- [x] **A4** x86 baseline recorded (state 1) — mean `8.797922 s`,
+      CV `1.03%`, correctness PASS — [issue #12](https://github.com/atshalahmedkhan/KAP_System/issues/12) · [PR #13](https://github.com/atshalahmedkhan/KAP_System/pull/13) — `model:simple` — completed 2026-08-05
 
 ### Phase B — The three components: not started
 - [ ] **B1** Profiling Engine — [issue #14](https://github.com/atshalahmedkhan/KAP_System/issues/14) · [PR #15](https://github.com/atshalahmedkhan/KAP_System/pull/15) (draft) — `model:complex` — blocked by A3, wayfinder #4

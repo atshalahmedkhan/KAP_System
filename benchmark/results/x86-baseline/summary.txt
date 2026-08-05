@@ -1,0 +1,13 @@
+state=x86-baseline
+warmup_iterations=2
+measured_iterations=7
+mean_seconds=8.797922
+sample_stdev_seconds=0.090861
+cv_percent=1.03
+load_gate=PASS
+load_1m_at_gate=0.42
+max_load_1m=1.00
+load_gate_policy=fixed_quiet_host_threshold
+cpu_set=0
+nice_level=10
+noise_assessment=CV 1.03 percent is low enough to trust for this baseline.
