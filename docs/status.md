@@ -34,9 +34,9 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
 
 ### Phase B — The three components: in progress
 - [x] **B1** Profiling Engine — [issue #14](https://github.com/atshalahmedkhan/KAP_System/issues/14) · [PR #15](https://github.com/atshalahmedkhan/KAP_System/pull/15) — `model:complex` — ✅ complete (2026-08-05); native Arm profiling remains Phase C
-- [ ] **B2** Optimization Agent — [issue #16](https://github.com/atshalahmedkhan/KAP_System/issues/16) · [PR #17](https://github.com/atshalahmedkhan/KAP_System/pull/17) — `model:complex` — ✅ complete (2026-08-05); live API sample pending reviewer key
+- [x] **B2** Optimization Agent — [issue #16](https://github.com/atshalahmedkhan/KAP_System/issues/16) · [PR #17](https://github.com/atshalahmedkhan/KAP_System/pull/17) — `model:complex` — ✅ complete (2026-08-05); live API sample pending reviewer key
 - [x] **B3** Verification & Safety Engine — [issue #18](https://github.com/atshalahmedkhan/KAP_System/issues/18) · [PR #19](https://github.com/atshalahmedkhan/KAP_System/pull/19) — `model:complex` — ✅ complete (2026-08-05); native Arm64 evidence remains Phase C
-- [ ] **B4** `archshift run` entrypoint wiring B1→B2→B3 — [issue #20](https://github.com/atshalahmedkhan/KAP_System/issues/20) · [PR #21](https://github.com/atshalahmedkhan/KAP_System/pull/21) (draft) — `model:simple` — blocked by B1, B2, B3
+- [x] **B4** `archshift run` entrypoint wiring B1→B2→B3 — [issue #20](https://github.com/atshalahmedkhan/KAP_System/issues/20) · [PR #21](https://github.com/atshalahmedkhan/KAP_System/pull/21) — `model:simple` — ✅ complete (2026-08-05); production Arm runtime adapters remain Phase C TODO
 
 ### Phase C — Real Arm64 run: not started
 No task issues yet — blocked on the Arm64 host decision (wayfinder #2). Open
