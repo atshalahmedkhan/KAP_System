@@ -28,8 +28,10 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
 - [ ] **A3** Python scaffold (`archshift/`, `pyproject.toml`, config, logging) — *K*
 - [ ] **A4** x86 baseline recorded (state 1) — *K*
 
-### Phase B — The three components: not started
-- [ ] **B1** Profiling Engine — *K*
+### Phase B — The three components: in progress
+- [x] **B1** Profiling Engine — *K* — `perf stat`/`perf record` runner,
+      #4-schema parser, Docker Desktop captured unsupported-event fixture, and
+      graceful-degradation tests complete. Native Arm profiling remains Phase C.
 - [ ] **B2** Optimization Agent — *A*
 - [ ] **B3** Verification & Safety Engine — *K*
 - [ ] **B4** `archshift run` entrypoint wiring B1→B2→B3 — *K*
