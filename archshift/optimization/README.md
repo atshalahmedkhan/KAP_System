@@ -1,5 +1,5 @@
 # Optimization Agent
 
-STUB — no implementation yet. Depends on A3 (scaffold) and wayfinder ticket #5
-(input/output contract) being answered first. Read the /claude-api skill
-before writing any SDK call. See the linked task issue for acceptance criteria.
+`archshift.optimization.propose_optimization()` consumes a B1 profile JSON,
+hotspot context, and build context, calls `claude-opus-5` with structured
+outputs, and enforces the locked flag allowlist before returning a proposal.
