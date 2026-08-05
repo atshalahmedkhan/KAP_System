@@ -21,7 +21,7 @@ case "$(uname -m)" in
 esac
 
 readonly actual_hash="$(sha256sum "${token_id_file}" | awk '{print $1}')"
-readonly expected_hash="$(awk 'NF { print $1; exit }' "${expected_file}")"
+readonly expected_hash="$(awk 'NF { print $1; exit }' "${expected_file}" | tr -d '\r\n')"
 
 if [[ -z "${expected_hash}" ]]; then
     echo "Correctness: FAIL (missing expected token-ID hash for $(uname -m))" >&2

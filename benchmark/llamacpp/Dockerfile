@@ -1,9 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
-ARG TARGETPLATFORM
-FROM --platform=$TARGETPLATFORM debian:bookworm-slim AS build
+FROM debian:bookworm-slim AS build
 
-ARG TARGETARCH
 ARG LLAMA_CPP_COMMIT=e031d956797f9a10f704fa523fe5fd9b72e9015c
 ARG MODEL_REVISION=9217f5db79a29953eb74d5343926648285ec7e67
 ARG MODEL_SHA256=7671c0c304e6ce5a7fc577bcb12aba01e2c155cc2efd29b2213c95b18edaf6ed
@@ -35,7 +33,7 @@ RUN mkdir -p /opt/benchmark/model \
       "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/${MODEL_REVISION}/${MODEL_FILE}" \
     && echo "${MODEL_SHA256}  /opt/benchmark/model/${MODEL_FILE}" | sha256sum --check -
 
-FROM --platform=$TARGETPLATFORM debian:bookworm-slim AS runtime
+FROM debian:bookworm-slim AS runtime
 
 ARG LLAMA_CPP_COMMIT=e031d956797f9a10f704fa523fe5fd9b72e9015c
 ARG MODEL_REVISION=9217f5db79a29953eb74d5343926648285ec7e67
@@ -45,16 +43,20 @@ ARG MODEL_FILE=qwen2.5-0.5b-instruct-q4_0.gguf
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
     coreutils \
+    libgomp1 \
     util-linux \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --create-home --uid 1000 --shell /bin/bash bench
 
 COPY --from=build /src/runner/build/token-id-runner /usr/local/bin/token-id-runner
+COPY --from=build /src/runner/build/bin/ /usr/local/lib/
+COPY --from=build /opt/benchmark/model/ /opt/benchmark/model/
 COPY prompt.txt /opt/benchmark/prompt.txt
 COPY expected/ /opt/benchmark/expected/
 COPY container-run.sh verify-output.sh /opt/benchmark/
 
-RUN chmod +x /opt/benchmark/container-run.sh /opt/benchmark/verify-output.sh \
+RUN ldconfig \
+    && chmod +x /opt/benchmark/container-run.sh /opt/benchmark/verify-output.sh \
     && chown -R bench:bench /opt/benchmark
 
 ENV LLAMA_CPP_COMMIT=${LLAMA_CPP_COMMIT} \

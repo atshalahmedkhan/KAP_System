@@ -134,7 +134,7 @@ int main(int argc, char ** argv) {
         }
 
         for (int i = 0; i < args.n_predict; ++i) {
-            const llama_token token = llama_sampler_sample(sampler, context, -1);
+            llama_token token = llama_sampler_sample(sampler, context, -1);
             if (llama_vocab_is_eog(vocab, token)) {
                 break;
             }

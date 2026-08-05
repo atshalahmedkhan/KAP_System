@@ -17,4 +17,5 @@ docker run --rm \
     --platform "${PLATFORM}" \
     --env "BENCH_CPU_SET=${BENCH_CPU_SET:-}" \
     --env "BENCH_NICE_LEVEL=${BENCH_NICE_LEVEL:-10}" \
+    --env "BENCHMARK_STATE=${BENCHMARK_STATE:-}" \
     "${IMAGE_NAME}"
