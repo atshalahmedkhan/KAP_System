@@ -19,24 +19,29 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
 - Scope cut to **3 components built deep**, rest specced
 - Full rationale and schedule: [revised-plan.md](revised-plan.md)
 - Open decisions tracked as wayfinder tickets on the issue tracker
+- Task issues + draft WIP PRs opened for every unblocked-or-soon-to-be-unblocked
+  build task, so agents can pick one up directly. Model routing (which task
+  gets Haiku 4.5/Codex Luna vs. Sonnet 5/Codex Tera) is in
+  [agent-routing.md](agent-routing.md).
 
-### Phase A — Foundation: not started
-- [ ] **A1** llama.cpp benchmark package (Dockerfile, pinned commit + model
-      SHA, fixed prompt/seed, output hash, benchmark harness) — *K*
-- [ ] **A2** Arm64 server recon (CPU, OS, sudo, Docker, `perf_event_paranoid`)
-      — *A* — **highest-risk unknown, day-1 priority**
-- [ ] **A3** Python scaffold (`archshift/`, `pyproject.toml`, config, logging) — *K*
-- [ ] **A4** x86 baseline recorded (state 1) — *K*
+### Phase A — Foundation: in progress
+- [ ] **A1** llama.cpp benchmark package — [issue #8](https://github.com/atshalahmedkhan/KAP_System/issues/8) · [PR #9](https://github.com/atshalahmedkhan/KAP_System/pull/9) (draft) — `model:complex` — blocked by wayfinder #3
+- [ ] **A2** Arm64 server recon — [wayfinder ticket #2](https://github.com/atshalahmedkhan/KAP_System/issues/2)
+      — *A* — **highest-risk unknown, day-1 priority**. No stub PR — this is
+      recon, not code; the answer goes on the ticket itself.
+- [x] **A3** Python scaffold — [issue #10](https://github.com/atshalahmedkhan/KAP_System/issues/10) · [PR #11](https://github.com/atshalahmedkhan/KAP_System/pull/11) — `model:simple` — ✅ complete (2026-08-05)
+- [ ] **A4** x86 baseline recorded (state 1) — [issue #12](https://github.com/atshalahmedkhan/KAP_System/issues/12) · [PR #13](https://github.com/atshalahmedkhan/KAP_System/pull/13) (draft) — `model:simple` — blocked by A1
 
 ### Phase B — The three components: in progress
-- [x] **B1** Profiling Engine — *K* — `perf stat`/`perf record` runner,
-      #4-schema parser, Docker Desktop captured unsupported-event fixture, and
-      graceful-degradation tests complete. Native Arm profiling remains Phase C.
-- [ ] **B2** Optimization Agent — *A*
-- [ ] **B3** Verification & Safety Engine — *K*
-- [ ] **B4** `archshift run` entrypoint wiring B1→B2→B3 — *K*
+- [x] **B1** Profiling Engine — [issue #14](https://github.com/atshalahmedkhan/KAP_System/issues/14) · [PR #15](https://github.com/atshalahmedkhan/KAP_System/pull/15) — `model:complex` — ✅ complete (2026-08-05); native Arm profiling remains Phase C
+- [ ] **B2** Optimization Agent — [issue #16](https://github.com/atshalahmedkhan/KAP_System/issues/16) · [PR #17](https://github.com/atshalahmedkhan/KAP_System/pull/17) (draft) — `model:complex` — blocked by B1, wayfinder #5
+- [ ] **B3** Verification & Safety Engine — [issue #18](https://github.com/atshalahmedkhan/KAP_System/issues/18) · [PR #19](https://github.com/atshalahmedkhan/KAP_System/pull/19) (draft) — `model:complex` — blocked by A3, wayfinder #6
+- [ ] **B4** `archshift run` entrypoint wiring B1→B2→B3 — [issue #20](https://github.com/atshalahmedkhan/KAP_System/issues/20) · [PR #21](https://github.com/atshalahmedkhan/KAP_System/pull/21) (draft) — `model:simple` — blocked by B1, B2, B3
 
 ### Phase C — Real Arm64 run: not started
+No task issues yet — blocked on the Arm64 host decision (wayfinder #2). Open
+these once #2 closes.
+
 - [ ] **C1** Arm64 host ready (Docker, perf, isolation, limits, logging) — *A*
 - [ ] **C2** Manual migration documented — *A*
 - [ ] **C3** Arm64 baseline recorded (state 2) — *A*
@@ -44,6 +49,9 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
       recorded rejection** — *K*
 
 ### Phase D — Evidence and submission material: not started
+No task issues yet — evidence bundle shape depends on what B1–B3 actually
+emit. Open these once Phase B lands.
+
 - [ ] **D1** Evidence bundle generator — *K*
 - [ ] **D2** Static HTML report — *A*
 - [ ] **D3** Demo video (<3 min) — *K + A*
