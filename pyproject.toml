@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archshift"
+version = "0.1.0"
+description = "Profiling-guided x86-to-Arm64 optimization pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "anthropic>=0.120.2",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.4,<9"]
+
+[tool.setuptools.packages.find]
+include = ["archshift*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

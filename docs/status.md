@@ -24,12 +24,12 @@ it's the fastest way for an agent (or a human) to know what's real vs. planned.
   gets Haiku 4.5/Codex Luna vs. Sonnet 5/Codex Tera) is in
   [agent-routing.md](agent-routing.md).
 
-### Phase A — Foundation: not started
+### Phase A — Foundation: in progress
 - [ ] **A1** llama.cpp benchmark package — [issue #8](https://github.com/atshalahmedkhan/KAP_System/issues/8) · [PR #9](https://github.com/atshalahmedkhan/KAP_System/pull/9) (draft) — `model:complex` — blocked by wayfinder #3
 - [ ] **A2** Arm64 server recon — [wayfinder ticket #2](https://github.com/atshalahmedkhan/KAP_System/issues/2)
       — *A* — **highest-risk unknown, day-1 priority**. No stub PR — this is
       recon, not code; the answer goes on the ticket itself.
-- [ ] **A3** Python scaffold — [issue #10](https://github.com/atshalahmedkhan/KAP_System/issues/10) · [PR #11](https://github.com/atshalahmedkhan/KAP_System/pull/11) (draft) — `model:simple` — **unblocked, takeable now**
+- [x] **A3** Python scaffold — [issue #10](https://github.com/atshalahmedkhan/KAP_System/issues/10) · [PR #11](https://github.com/atshalahmedkhan/KAP_System/pull/11) — `model:simple` — ✅ complete (2026-08-05)
 - [ ] **A4** x86 baseline recorded (state 1) — [issue #12](https://github.com/atshalahmedkhan/KAP_System/issues/12) · [PR #13](https://github.com/atshalahmedkhan/KAP_System/pull/13) (draft) — `model:simple` — blocked by A1
 
 ### Phase B — The three components: not started
